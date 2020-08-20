@@ -1,6 +1,6 @@
 name=p100
 
-for n in `seq 5 22`
+for n in `seq 5 26`
 do
     for bdim in 64 128 256 512
     do

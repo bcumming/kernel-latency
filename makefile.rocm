@@ -1,0 +1,10 @@
+ROCBLAS_ROOT=/opt/rocm-3.7.0/rocblas
+ROCM_ROOT=/opt/rocm-3.7.0
+ROCTRACER_ROOT=${ROCM_ROOT}/roctracer
+
+bench: test.cu util_rocm.h
+	hipcc -O0 -g test.cu -o bench -DXXROCM -std=c++11 -O3 --amdgpu-target=gfx906,gfx908 -I${ROCM_ROOT}/include -I${ROCTRACER_ROOT}/include -L${ROCTRACER_ROOT}/lib -lroctracer64
+
+
+clean:
+	rm -rf bench a.out

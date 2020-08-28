@@ -2,10 +2,10 @@
 
 #if defined XXCUDA
     #include "util_cuda.h"
-#elif defined XXHIP
-    #include "util_cuda.h"
+#elif defined XXROCM
+    #include "util_rocm.h"
 #else
-    #error "one of XXCUDA or XXHIP must #defined"
+    #error "one of XXCUDA or XXROCM must #defined"
 #endif
 
 
